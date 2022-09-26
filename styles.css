@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+:root {
+    --red: hsl(0, 100%, 74%);
+    --green: hsl(154, 59%, 51%);
+    --accent: hsl(248, 32%, 49%);
+    --dark-blue: hsl(249, 10%, 26%) ;
+    --grayish-blue: hsl(246, 25%, 77%);
+    --white: #ffffff;
+
+    --font-poppins: 'Poppins', sans-serif;
+}
+
+
+body {
+    background-image: url(./images/bg-intro-desktop.png);
+    background-color: var(--red);
+    font-family: var(--font-poppins);
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    width: 75%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 70px;
+}
+
+.col-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.col-1 p {
+    color: var(--white);
+    font-size: 1.2rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.field-group img {
+    width: 20px;
+}
+
+.col-2 label {
+    display: none;
+}
+
+.submit-form {
+    background-color: var(--white);
+    padding: 35px;
+    border-radius: 15px;
+}
+
+.error-text, .error-icon {
+    display: none;
+}
+
+
+form p {
+    margin-top: 5px ;
+    color: var(--grayish-blue);
+    font-size: 0.7rem;
+    text-align: right;
+    margin-bottom: 15px;
+    font-style: italic;
+    color: var(--red);
+}
+
+form input {
+    padding: 1.2rem;
+    border: var(--grayish-blue) 1px solid;
+    font-weight: 600; 
+}
+
+
+button {
+    width: 100%;
+    cursor: pointer;
+}
+
+.col-2 button[type = submit] {
+    border: none;
+    background-color: hsl(154, 56%, 51%) ;
+}
+
+.col-2 input:focus {
+    border: 1.5px solid hsl(249, 10%, 26%);
+}
+
+.col-2 input::placeholder {
+    color: hsla(249, 10%, 26%, 0.678);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.col-2 button[type = submit]:hover {
+    background-color: hsl(154, 80%, 63%) ;
+}
+
+.field-group.error .error-text, .field-group.error .error-icon {
+    display: block;
+}
+
+.field-group.error input {
+    border: 2px solid hsl(0, 100%, 74%);
+}
+
+.card {
+    background-color: var(--accent);
+    border: none;
+    color: var(--white);
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: -1px 9px 5px 0px rgba(0,0,0,0.34);
+}
+
+.card p {
+    padding: 1.2rem 3rem;
+    text-align: center;
+}
+
+.card span {
+    font-weight: bold;
+}
+
+.btn-green {
+    background-color: var(--green);
+    color: var(--white);
+    border: none;
+    padding: 1.2rem 3rem;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: -1px 3px 5px 0px rgba(0,0,0,0.34);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 3.5rem;
+    line-height: 4rem;
+}
+
+.terms {
+    text-align: center;
+    font-size: 0.7rem;
+    margin-top: 1.2rem;
+    color: var(--grayish-blue);
+}
+
+.terms a {
+    color: var(--red);
+    font-weight: 600;
+}
+
+.error-icon {
+    position: absolute;
+    top: 32%;
+    right: 20px;
+}
+
+.error-text {
+    text-align: right;
+}
+
+@media only screen and (max-width: 700px) {
+    
+    body {
+        background-image: url(./images/bg-intro-mobile.png);
+    }
+    main {
+        height: auto;
+    }
+    .wrapper {
+    display: grid;    
+    grid-template-columns: repeat(1,1fr);
+    width: 100%;
+    padding: 2rem;
+    }
+    h1 {
+        font-size: 1.5rem;
+        text-align: center;
+        line-height: 2rem;
+    }
+    .col-1 p {
+        font-size: 0.8rem;
+        text-align: center;
+    }
+
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
